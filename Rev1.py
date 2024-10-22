@@ -11,9 +11,9 @@ import os
 
 os.system('cls' if os.name == 'nt' else 'clear')
 if os.name == 'nt':
-    ctypes.windll.kernel32.SetConsoleTitleW('REVERSE IP BY DION SALVADOR')
+    ctypes.windll.kernel32.SetConsoleTitleW('REVERSE IP BY DION TOOLS')
 else:
-    sys.stdout.write('REVERSE IP BY DION SALVADOR')
+    sys.stdout.write('REVERSE IP BY DION TOOLS')
 init(autoreset=True)
 
 fr = Fore.RED
@@ -27,7 +27,6 @@ def process_ip(ip):
     api1(ip)
     api2(ip)
     api3(ip)
-    api4(ip)
 
 def api1(ip):
     try:
@@ -80,25 +79,8 @@ def api3(ip):
         pass
     return None
 
-def api4(ip):
-    try:
-        url = f'https://api.willy.pro/reverseip/?ip={ip}'
-        response = requests.get(url, headers=header.generate(), timeout=35)
-        data = response.json()
-        if 'domains' in data:
-            with open('Grabbed.txt', 'a') as revip_file:
-                for domain in data['domains']:
-                    domain_lower = domain.lower()
-                    if 'status' not in domain_lower and 'success' not in domain_lower and ('Domains' not in domain_lower) and (not domain_lower.startswith('webmail.')) and (not domain_lower.startswith('ftp.')) and (not domain_lower.startswith('cpanel.')) and (not domain_lower.startswith('webdisk.')) and (not domain_lower.startswith('mail.')) and (not domain_lower.startswith('cpcontacts.')) and (not domain_lower.startswith('ns1.')) and (not domain_lower.startswith('ns2.')):
-                        domain = domain.replace('www.', '')
-                        print('\x1b[1;31m[DION_REVERSE]: \x1b[1;32m' + ip + ' =======> ' + '\x1b[0;36m' + domain)
-                        revip_file.write(domain + '\n')
-    except Exception as e:
-        print(f"Error in API 4: {str(e)}")
-    return None
-
 def main():
-    print('\x1b[0;36m\n [#] this tool is ::\n\n [YOUR TOOL MESSAGE]\n\n                     telegram: [trvm1337]\n                     owner : [Dion Salvador]\n        ')
+    print('\x1b[0;36m\n [#] this tool is ::\n\n [Catch Me If You Can]\n\n                     telegram: [DionSlvs]\n        ')
     ad = input('\x1b[1;31mEnter your ip : ')
     poolAmount = int(input('\x1b[1;31mThread: '))
     opens = open(ad, mode='r', errors='ignore').read().splitlines()
@@ -106,4 +88,4 @@ def main():
     Professor.map(process_ip, opens)
 
 main()
-input('@PhantomSec1337')
+input('HackerPatahHati-2017')
